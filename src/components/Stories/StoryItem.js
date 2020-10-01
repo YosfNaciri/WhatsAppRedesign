@@ -10,13 +10,6 @@ export default function StoryItem({story}) {
   if (story.name === 'New Story') {
     return (
       <View style={styles.container}>
-        {/* <Avatar
-          size={90}
-          containerStyle={styles.newStory}
-          rounded
-          icon={{name: 'plus', type: 'feather'}}
-        /> */}
-        
         <Button
           ViewComponent={LinearGradient}
           buttonStyle={styles.newStory}
@@ -28,7 +21,7 @@ export default function StoryItem({story}) {
           icon={
             <Icon
               name="plus"
-              size = {40}
+              size = {20}
               color="white"
             />
           }
@@ -42,7 +35,7 @@ export default function StoryItem({story}) {
   return (
     <View style={styles.container}>
       <Avatar
-        size={90}
+        size={70}
         containerStyle={styles.avatar}
         rounded
         source={{
@@ -58,28 +51,29 @@ export default function StoryItem({story}) {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 20,
-    margin: 10,
-    width: 100,
-    height: 130,
+    marginBottom : 40,
+    margin: 5,
+    width: 75,
+    height: 100,
     justifyContent: 'center',
     alignItems: 'center',
-   // backgroundColor : "#313131"
+    //backgroundColor : "#313131"
   },
   avatar: {
-    borderWidth: 3,
-    padding: 3,
+    borderWidth: 2,
+    padding: 2,
     borderColor: style.systemGreen,
   },
   text: {
     paddingTop: 10,
     fontFamily: style.regularFont,
     color: style.secondGrey,
+    fontFamily : style.regularFont
   },
   newStory: {
     borderRadius : 50,
-    width : 90,
-    height : 90,
+    width : 70,
+    height : 70,
     borderWidth: 3,
     borderColor: style.primaryWhite,
   },

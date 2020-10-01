@@ -14,7 +14,9 @@ export default function Stories({Stories}) {
             <ScrollView
             horizontal
             showsHorizontalScrollIndicator={false}
-            showsVerticalScrollIndicator={false} >
+            showsVerticalScrollIndicator={false} 
+            style={styles.container}
+            >
               <StoryItem story={newStory} />
               {Stories.map( story => <StoryItem key={story.id} story={story} /> )}
             </ScrollView>
@@ -22,6 +24,10 @@ export default function Stories({Stories}) {
 }
 
 const styles = StyleSheet.create({
-    
+  container : {
+   // backgroundColor : "#414141",
+    padding : 10,
+    alignContent : "space-between"
+  }
   });
   

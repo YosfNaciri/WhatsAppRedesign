@@ -6,14 +6,17 @@ import {
   Button,
   Text
 } from 'react-native';
+import CallsList from '../components/Calls/CallsList';
+import {CallsHistory} from '../Data/Data'
 
 
 export default function Calls({navigation}) {
     return (
         <View style={styles.container}>
-            <Text>Calls</Text>
+          <CallsList navigation={navigation} calls={CallsHistory} />
+            {/* <Text>Calls</Text>
             <Button title="Call" 
-            onPress={() => navigation.navigate('Calling')}/>
+            onPress={() => navigation.navigate('Calling')}/> */}
         </View>
     )
 }
