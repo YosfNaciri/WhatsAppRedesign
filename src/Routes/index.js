@@ -5,6 +5,8 @@ import BottomNavigation from './BottomNavigation';
 import Profile from '../screens/Profile';
 import Chat from '../screens/Chat';
 import Calling from '../screens/Calling';
+import BottomTabsNavigation from '../components/Navigation/BottomTabsHeader';
+
 
 
 function getHeaderTitle(route) {
@@ -19,6 +21,7 @@ function getHeaderTitle(route) {
     }
   }
 
+
 const Stack = createStackNavigator();
 
 export default function Routes() {
@@ -30,8 +33,9 @@ export default function Routes() {
           <Stack.Screen
             name="BottomNavigation"
             component={BottomNavigation}
-            options={({ route }) => ({
+            options={({route}) => ({
                 headerTitle: getHeaderTitle(route),
+                headerRight: () => <BottomTabsNavigation routeName={getHeaderTitle(route)}/>
             })}
           />
           <Stack.Screen

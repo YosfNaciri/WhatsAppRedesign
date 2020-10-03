@@ -8,14 +8,15 @@ import ChatIndicator from './ChatIndicator';
 
 export default function ChatListItem({navigation, message}) {
   return (
-    <ListItem topDivider >
+    <ListItem 
+    topDivider
+    onPress={() => navigation.navigate('Chat')} >
         <UserAvatar  contact={message.contact} size={70} />
         <ListItem.Content >
           <ListItem.Title style={styles.title}>{message.contact.name}</ListItem.Title>
           <ListItem.Subtitle style={styles.subTutle} numberOfLines={2}>{message.lastMsg}</ListItem.Subtitle>
         </ListItem.Content>
        < ChatIndicator totalNew={message.totalNew} />
-        
       </ListItem>
   );
 }
